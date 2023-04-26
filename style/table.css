@@ -1,0 +1,35 @@
+table{
+    width: 80%;
+    color: white;
+    text-align: center;
+}
+
+thead{
+    background-color: #44546A;
+    font-weight: bold;
+}
+
+tbody{
+    background-color: #637b9c;
+}
+
+.btn{
+    width: 30px;
+}
+
+.submitEdit, .submitDelete{
+    background-color: transparent;
+    border: none;
+}
+
+.submitEdit{
+    color: white;
+}
+
+.submitDelete{
+    color: red;
+}
+
+.submitEdit:hover, .submitDelete:hover{
+    cursor: pointer;
+}
