@@ -19,7 +19,7 @@
         <input type="hidden" id="Username" value="<?php echo $_SESSION['Username']; ?>" />
 
         <div class="flex-container">
-    
+            
         </div>
 
         <?php include_once("footer.php"); ?>

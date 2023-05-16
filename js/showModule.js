@@ -1,0 +1,1 @@
+window.location.href = "..php?php_var=" + escape(js_var);
