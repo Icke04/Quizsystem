@@ -1,0 +1,44 @@
+.flex-container{
+    flex-direction: column !important;
+}
+
+.startGameDiv{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    align-items: center;
+    width: 30%;
+    height: 40vh;
+    background-color: #44546a;
+    color: white;
+    border: none;
+    border-radius: 15px;
+}
+
+.text{
+    margin-top: 15px;
+}
+
+#startForm{
+    display: flex;
+    flex-direction: column;
+}
+
+#cancelForm{
+    margin-bottom: 0;
+}
+
+input[type=submit]{
+    width: 70px;
+    height: 30px;
+    background-color: #627a9b;
+    border: none;
+    border-radius: 15px;
+    color: white;
+}
+
+input[type=submit]:hover{
+    opacity: 0.6;
+    transition: linear 0.4s;
+    cursor: pointer;
+}

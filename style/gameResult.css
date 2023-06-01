@@ -1,0 +1,53 @@
+.flex-container{
+    align-items: center !important;
+    align-content: start !important;
+    flex-direction: column;
+}
+
+#resultDiv{
+    width: 80%;
+}
+
+#resultTable{
+    width: 100%;
+    text-align: center;
+}
+
+#result{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.green{
+    background-color: green !important;
+    color: white;
+}
+
+.red{
+    background-color: red !important;
+    color: white;
+}
+
+thead{
+    background-color: #44546a;
+    color: white;
+    font-weight: bold;
+}
+
+tbody{
+    background-color:  #637b9c;
+    color: white;
+}
+
+.noBackground{
+    background-color: white !important;
+}
+
+#ownPoints{
+    font-weight: bold;
+}
+
+#opponentsPoints{
+    font-weight: bold;
+}

@@ -1,0 +1,83 @@
+.column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 33.3%;
+  height: 70vh;
+  text-align: center;
+}
+
+.chat{
+  justify-content:end;
+  color: white;
+  border-radius: 15px;
+  display: flex;
+}
+
+#messages{
+  height: auto;
+  width: 80%;
+  text-align: left;
+  overflow: auto;
+  background-color: #637b9c;
+  border-radius: 15px 15px 0px 0px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.ChatMessages{
+  padding: 0px 5px 0px 5px;
+  margin: 0;
+}
+
+#messageInput{
+  width: 80%;
+  background-color: #637b9c;
+  border-radius: 0px 0px 15px 15px;
+  height: 30px;
+  display: flex;
+  padding-bottom: 5px;
+}
+
+#newMessage{
+  width: 100%;
+  height: auto;
+  resize: none;
+  border: none;
+  border-radius: 12px;
+  margin: 0px 5px 5px 5px;
+}
+
+.game{
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.btn{
+  width: 100%;
+  height: 100%;
+}
+
+.startGame{
+  flex: 1;
+  height: 100%;
+  width: 80%;
+  background-color: #637b9c;
+  color: white;
+  border-radius: 15px;
+  border: none;
+}
+
+.startGame:hover{
+  cursor: pointer;
+  background-color: #44546a;
+  transition: linear 0.6s;
+}
+
+.top{
+  padding-bottom: 5px
+}
+
+.bottom{
+  padding-top: 5px
+}
