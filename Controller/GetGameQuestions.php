@@ -134,24 +134,24 @@
             }
             ?>
             <div class="buttonRow">
-                <button type="button" id="nextBtn" class="btn" style="display:none;">Next</button>
+                <button type="button" id="nextBtn" class="btn" style="display:none;">weiter</button>
             </div>
             <form class="buttonRow" method="post" action="../GameResult.php">
-                <input id="submit" class="btn" type="submit" value="Show Result" style="display:none;" />
+                <input id="submit" class="btn" type="submit" value="Ergebnis anzeigen" style="display:none;" />
             </form>
             <?php
         }
         else
         {
             ?>
-            <p>Fehler beim Laden der Spielfragen!</p>
+                <p>Fehler beim Laden der Spielfragen!</p>
             <?php
         }
     }
     else
     {
         ?>
-        <p>Fehler beim Laden der Spielfragen!</p>
+            <p>Fehler beim Laden der Spielfragen!</p>
         <?php
     }
 

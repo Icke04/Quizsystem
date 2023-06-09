@@ -19,19 +19,19 @@
 
         ?>
             <div class="flex-container-form">
-                <p>Edit Module</p>
+                <p>Modul bearbeiten</p>
                 <form method="post" action="../Controller/UpdateModule.php">
                     <input type="hidden" class="inputText" name="IdModule" value="<?php echo $module->getIdModule(); ?>" />
                     <input type="text" class="inputText" name="Abbreviation" value="<?php echo $module->getAbbreviation(); ?>" />
                     <input type="text" class="inputText" name="FullDesignation" value="<?php echo $module->getFullDesignation(); ?>" />
-                    <input type="submit" class="inputSubmit" value="Submit" />
+                    <input type="submit" class="inputSubmit" value="bearbeiten" />
                 </form>
                 <form method="post" action="../ShowModule.php">
-                    <input type="submit" class="inputSubmit" value="Cancel" />
+                    <input type="submit" class="inputSubmit" value="zurück" />
                 </form>
             </div>
             <div class="flex-container-form">
-                <p>Edit Tutors</p>
+                <p>Tutoren bearbeiten</p>
                 <form method="post" action="../Controller/UpdateIsTutor.php">
 
                     <input type="hidden" name="IdModule" value="<?php echo $module->getIdModule(); ?>"/>
@@ -59,21 +59,27 @@
                         if($isTutor)
                         {
                             ?>
-                                <input id="<?php echo $user->getUsername(); ?>" type="checkbox" name="user[]" value="<?php echo $user->getIdUser(); ?>" checked /><label for="<?php echo $user->getUsername(); ?>"><?php echo $user->getUsername(); ?></label>
+                                <div class="input-list">
+                                    <input id="<?php echo $user->getUsername(); ?>" type="checkbox" name="user[]" value="<?php echo $user->getIdUser(); ?>" checked />
+                                    <label for="<?php echo $user->getUsername(); ?>"><?php echo $user->getUsername(); ?></label>
+                                </div>
                             <?php
                         }
                         else
                         {
                             ?>
-                                <input id="<?php echo $user->getUsername(); ?>" type="checkbox" name="user[]" value="<?php echo $user->getIdUser(); ?>" /><label for=""<?php echo $user->getUsername(); ?>><?php echo $user->getUsername(); ?></label>
+                                <div class="input-list">
+                                    <input id="<?php echo $user->getUsername(); ?>" type="checkbox" name="user[]" value="<?php echo $user->getIdUser(); ?>" />
+                                    <label for=""<?php echo $user->getUsername(); ?>><?php echo $user->getUsername(); ?></label>
+                                </div>
                             <?php
                         }
                     }
                     ?>
-                    <input type="submit" class="inputSubmit" value="Submit" />
+                    <input type="submit" class="inputSubmit margin" value="bearbeiten" />
                 </form>
                 <form method="post" action="../ShowModule.php">
-                    <input type="submit" class="inputSubmit" value="Cancel" />
+                    <input type="submit" class="inputSubmit" value="zurück" />
                 </form>
             </div>
         <?php

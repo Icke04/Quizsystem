@@ -14,7 +14,7 @@
 
         ?>
             <div class="flex-container-form">
-                <p>Edit Account</p>
+                <p>Account bearbeiten</p>
                 <form method="post" action="../Controller/UpdateAccount.php">
                     <input type="hidden" class="inputText" name="IdUser" value="<?php echo $user->getIdUser(); ?>" />
                     <input type="text" class="inputText" name="Username" value="<?php echo $user->getUsername(); ?>" />
@@ -51,10 +51,10 @@
                     }
                     ?>
                     
-                    <input type="submit" class="inputSubmit" value="Submit" />
+                    <input type="submit" class="inputSubmit" value="speichern" />
                 </form>
                 <form method="post" action="../ShowAccount.php">
-                    <input type="submit" class="inputSubmit" value="Cancel" />
+                    <input type="submit" class="inputSubmit" value="zurück" />
                 </form>
             </div>
         <?php

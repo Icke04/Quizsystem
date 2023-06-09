@@ -21,11 +21,11 @@
             {
                 ?>
                     <tr>
-                        <td><?php echo $user->getUsername(); ?></td>
-                        <td><?php echo $user->getEmail(); ?></td>
-                        <td><?php echo $pw; ?></td>
-                        <td><?php echo $getRole->getRole(); ?></td>
-                        <td>
+                        <td data-label="Username"><?php echo $user->getUsername(); ?></td>
+                        <td data-label="E-Mail"><?php echo $user->getEmail(); ?></td>
+                        <td data-label="Passwort"><?php echo $pw; ?></td>
+                        <td data-label="Rolle"><?php echo $getRole->getRole(); ?></td>
+                        <td data-label="bearbeiten">
                             <form method="post" action="../EditAccount.php">
                                 <input type="hidden" name="IdUser" value="<?php echo $user->getIdUser(); ?>" />
                                 <input type="hidden" name="Username" value="<?php echo $user->getUsername(); ?>" />
@@ -34,7 +34,7 @@
                                 <input class="submitEdit" type="submit" value="&#9881;" />
                             </form>
                         </td>
-                        <td>
+                        <td data-label="löschen">
                             <form method="post" action="../Controller/DeleteAccount.php">
                                 <input type="hidden" name="IdUser" value="<?php echo $user->getIdUser(); ?>" />
                                 <input type="hidden" name="Username" value="<?php echo $user->getUsername(); ?>" />
@@ -52,11 +52,11 @@
                 if($user->getIdUser() == $_SESSION['IdUser'])
                 {
                     ?>
-                        <td><?php echo $user->getUsername(); ?></td>
-                        <td><?php echo $user->getEmail(); ?></td>
-                        <td><?php echo $pw; ?></td>
-                        <td><?php echo $getRole->getRole(); ?></td>
-                        <td>
+                        <td data-label="Username"><?php echo $user->getUsername(); ?></td>
+                        <td data-label="E-Mail"><?php echo $user->getEmail(); ?></td>
+                        <td data-label="Passwort"><?php echo $pw; ?></td>
+                        <td data-label="Rolle"><?php echo $getRole->getRole(); ?></td>
+                        <td data-label="bearbeiten">
                             <form method="post" action="../EditAccount.php">
                                 <input type="hidden" name="IdUser" value="<?php echo $user->getIdUser(); ?>" />
                                 <input type="hidden" name="Username" value="<?php echo $user->getUsername(); ?>" />
@@ -65,7 +65,6 @@
                                 <input class="submitEdit" type="submit" value="&#9881;" />
                             </form>
                         </td>
-                        <td></td>
                     <?php
                 }
             }
@@ -74,7 +73,7 @@
     else
     {
         ?>
-        <p>Fehler beim Laden der Accounts!</p>
+            <p>Fehler beim Laden der Accounts!</p>
         <?php
     }
 

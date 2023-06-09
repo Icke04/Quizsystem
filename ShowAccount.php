@@ -19,10 +19,12 @@
                     <tr>
                         <td>Username</td>
                         <td>E-Mail</td>
-                        <td>Password</td>
-                        <td>Role</td>
-                        <td class="btn"></td>
-                        <td class="btn"></td>
+                        <td>Passwort</td>
+                        <td>Rolle</td>
+                        <td class="btn">bearbeiten</td>
+                        <?php if($_SESSION['Role'] == "Admin") { ?>
+                            <td class="btn">löschen</td>
+                        <?php } ?>
                     </tr>
                 </thead>
                 <tbody>

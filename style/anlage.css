@@ -1,7 +1,8 @@
-.flex-container-form{
+.flex-container-form {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 100%;
+    max-width: 600px;
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
@@ -11,7 +12,7 @@
     border-radius: 18px;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -30,37 +31,43 @@ form{
     height: 30px;
 }
 
-.inputText:focus{
+.inputText:focus {
     outline: none;
 }
 
-.inputSubmit{
+.inputSubmit {
     background-color: #637b9c;
     color: white;
     font-size: 20px;
     border: none;
     border-radius: 10px;
+    min-width: 150px;
 }
 
-.inputSubmit:hover{
+.inputSubmit.margin {
+    margin-top: 10px;
+}
+
+.inputSubmit:hover {
     cursor: pointer;
     opacity: 0.7;
     transition: linear 0.2s;
 }
 
-.select{
+.select {
     margin-bottom: 15px;
     width: 75%;
     border: none;
     border-bottom: 1px white solid;
     background-color: transparent;
     color: white;
+    margin-top: 10px;
 }
 
-option{
+option {
     background-color: #44546A;
 }
 
-.inputSubmit{
+.inputSubmit {
     margin-bottom: 15px;
 }

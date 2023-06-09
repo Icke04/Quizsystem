@@ -19,7 +19,7 @@
             ?>
 
             <form action="./index.php">
-                <input type="submit" value="Exit" />
+                <input  class="btn" type="submit" value="schließen" />
             </form>
 
         </div>

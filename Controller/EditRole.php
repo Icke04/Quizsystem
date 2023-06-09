@@ -11,14 +11,14 @@
 
         ?>
             <div class="flex-container-form">
-                <p>Edit Role</p>
+                <p>Rolle bearbeiten</p>
                 <form method="post" action="../Controller/UpdateRole.php">
                     <input type="hidden" class="inputText" name="IdRole" value="<?php echo $result->getIdRole(); ?>" />
                     <input type="text" class="inputText" name="Role" value="<?php echo $result->getRole(); ?>" />
-                    <input type="submit" class="inputSubmit" value="Submit" />
+                    <input type="submit" class="inputSubmit" value="speichern" />
                 </form>
                 <form method="post" action="../ShowRole.php">
-                    <input type="submit" class="inputSubmit" value="Cancel" />
+                    <input type="submit" class="inputSubmit" value="zurück" />
                 </form>
             </div>
         <?php

@@ -1,34 +1,46 @@
-.flex-container{
+.flex-container {
     flex-direction: column !important;
 }
 
-.startGameDiv{
+.startGameDiv {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-content: space-between;
     align-items: center;
-    width: 30%;
+    width: 90%;
+    max-width: 350px;
     height: 40vh;
     background-color: #44546a;
     color: white;
     border: none;
     border-radius: 15px;
+    padding: 10px;
 }
 
-.text{
+.text {
     margin-top: 15px;
+    text-align: center;
 }
 
-#startForm{
+#startForm {
     display: flex;
     flex-direction: column;
+    margin: 15px auto;
+    overflow: hidden;
+    max-width: 100%;
 }
 
-#cancelForm{
+form {
+    max-width: 100%;
+    display: flex;
+}
+
+#cancelForm {
     margin-bottom: 0;
 }
 
-input[type=submit]{
+input[type=submit] {
     width: 70px;
     height: 30px;
     background-color: #627a9b;
@@ -37,7 +49,12 @@ input[type=submit]{
     color: white;
 }
 
-input[type=submit]:hover{
+select {
+    margin-right: 5px;
+    max-width: 70%;
+}
+
+input[type=submit]:hover {
     opacity: 0.6;
     transition: linear 0.4s;
     cursor: pointer;

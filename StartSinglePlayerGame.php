@@ -13,7 +13,7 @@
 
         <div class="flex-container">
             <div class="startGameDiv">
-                <div class="text">Hier wird ein Multiplayer-Spiel gestartet!</div>
+                <div class="text">Hier wird ein Singleplayer-Spiel gestartet!</div>
                 <div class="text">Bitte ein Modul auswählen und Start drücken!</div>
             
                 <div id="startForm">
@@ -28,7 +28,7 @@
                 </div>
                 <div id="cancelForm">
                     <form method="post" action="./index.php">
-                        <input type="submit" value="Cancel" />
+                        <input type="submit" value="zurück" />
                     </form>
                 </div>
             </div>

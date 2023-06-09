@@ -1,10 +1,10 @@
-.flex-container{
+.flex-container {
     align-items: center !important;
     align-content: start !important;
     flex-direction: column;
 }
 
-.answer{
+.answer {
     background-color: #44546a;
     color: white;
     border: none;
@@ -13,53 +13,55 @@
     margin: 5px;
 }
 
-.answer:hover{
+.answer:hover {
     cursor: pointer;
 }
   
-.correct{
+.correct {
     transition: background-color 1000ms linear;
     background-color: green;
 }
 
-.wrong{
+.wrong {
     transition: background-color 1000ms linear;
     background-color: red;
 }
 
-.questionDiv{
-    width: 80%;
+.questionDiv {
+    width: 100%;
     min-height: 80vh;
     display: flex;
     flex-direction: column;
 }
 
-.question{
+.question {
     display: flex;
     flex-direction: row;
     align-items: center;
     align-content: center;
 }
 
-.question p{
+.question p {
     width: 100%;
     text-align: center;
 }
 
-.answerRow{
+.answerRow {
     display: flex;
     flex-direction: row;
     height: 30vh;
 }
 
-.buttonRow{
+.buttonRow {
     width: 80%;
     display: flex;
     flex-direction: row;
 }
 
-.btn{
-    width: 100%;
+.btn {
+    width: fit-content;
+    min-width: 200px;
+    margin: 0 auto;
     background-color: #44546a;
     color: white;
     border: none;
@@ -67,6 +69,6 @@
     height: 8vh;
 }
 
-.btn:hover{
+.btn:hover {
     cursor: pointer;
 }

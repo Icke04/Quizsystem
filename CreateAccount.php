@@ -20,7 +20,7 @@
         
         <div class="flex-container">
             <div class="flex-container-form">
-                <p>Create Account</p>
+                <p>Account erstellen</p>
                 <form method="post" action="./Controller/PostAccount.php">
                     <input type="text" class="inputText" name="Username" placeholder="Username" />
                     <input type="text" class="inputText" name="Email" placeholder="E-Mail" />
@@ -31,7 +31,7 @@
                         <option value="2">Tutor</option>
                         <option value="1">Admin</option>
                     </select>
-                    <input type="submit" class="inputSubmit" value="Submit" />
+                    <input type="submit" class="inputSubmit" value="speichern" />
                 </form>
             </div>
         </div>

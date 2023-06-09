@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Question - Onlinequiz</title>
+        <title>Frage - Onlinequiz</title>
         <link rel="stylesheet" href="/style/layout.css" />
         <link rel="stylesheet" href="/style/anlage.css?=v1" />
     </head>
@@ -15,20 +15,20 @@
 
         <div class="flex-container">
             <div class="flex-container-form">
-                <p>Create Question</p>
+                <p>Frage erstellen</p>
                 <form method="post" action="./Controller/PostQuestion.php">
-                    <input type="text" class="inputText" name="Question" placeholder="Question" />
-                    <input type="text" class="inputText" name="CorrectAnswer" placeholder="CorrectAnswer" />
-                    <input type="text" class="inputText" name="WrongAnswer1" placeholder="WrongAnswer" />
-                    <input type="text" class="inputText" name="WrongAnswer2" placeholder="WrongAnswer" />
-                    <input type="text" class="inputText" name="WrongAnswer3" placeholder="WrongAnswer" />
+                    <input type="text" class="inputText" name="Question" placeholder="Frage" />
+                    <input type="text" class="inputText" name="CorrectAnswer" placeholder="Richtige Antwort" />
+                    <input type="text" class="inputText" name="WrongAnswer1" placeholder="Falsche Antwort" />
+                    <input type="text" class="inputText" name="WrongAnswer2" placeholder="Falsche Antwort" />
+                    <input type="text" class="inputText" name="WrongAnswer3" placeholder="Falsche Antwort" />
                     
                     <select class="select" name="IdModule">
                         <option value=0 selected>...</option>
                         <?php include_once("./Controller/GetModulesSelect.php"); ?>
                     </select>
                     
-                    <input type="submit" class="inputSubmit" value="Submit" />
+                    <input type="submit" class="inputSubmit" value="erstellen" />
                 </form>
             </div>
         </div>

@@ -14,15 +14,15 @@
         {
             ?>
             <tr>
-                <td><?php echo $role->getRole(); ?></td>
-                <td>
+                <td data-label="Rolle"><?php echo $role->getRole(); ?></td>
+                <td data-label="bearbeiten">
                     <form method="post" action="../EditRole.php">
                         <input type="hidden" name="IdRole" value="<?php echo $role->getIdRole(); ?>" />
                         <input type="hidden" name="Role" value="<?php echo $role->getRole(); ?>" />
                         <input class="submitEdit" type="submit" value="&#9881;" />
                     </form>
                 </td>
-                <td>
+                <td data-label="löschen">
                     <form method="post" action="../Controller/DeleteRole.php">
                         <input type="hidden" name="IdRole" value="<?php echo $role->getIdRole(); ?>" />
                         <input type="hidden" name="Role" value="<?php echo $role->getRole(); ?>" />
@@ -36,7 +36,7 @@
     else
     {
         ?>
-        <p>Fehler beim Laden der Rollen!</p>
+            <p>Fehler beim Laden der Rollen!</p>
         <?php
     }
     

@@ -28,7 +28,7 @@
                 </div>
                 <div id="cancelForm">
                     <form method="post" action="./index.php">
-                        <input type="submit" value="Cancel" />
+                        <input type="submit" value="zurück" />
                     </form>
                 </div>
             </div>

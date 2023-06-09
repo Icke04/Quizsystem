@@ -16,7 +16,7 @@
             if(!($_SESSION['IsSingleplayer']))
             {
                 ?>
-                <p id="opponent">Waiting for Opponent!</p>
+                <p id="opponent">Warte auf Gegner!</p>
                 <?php
             }
             ?>
@@ -25,7 +25,7 @@
                 <input id="isSingleplayer" type="hidden" value="<?php echo $_SESSION['IsSingleplayer']; ?>" />
             </form>
             <form method="post" action="./Controller/DeleteGame.php">
-                <input id="delete" type="submit" value="Cancel" />
+                <input id="delete" type="submit" value="zurück" />
                 <input id="isSingleplayer" type="hidden" value="<?php echo $_SESSION['IsSingleplayer']; ?>" />
             </form>
         </div>

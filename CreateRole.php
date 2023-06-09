@@ -9,7 +9,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Role - Onlinequiz</title>
+        <title>Rolle - Onlinequiz</title>
         <link rel="stylesheet" href="/style/layout.css" />
         <link rel="stylesheet" href="/style/anlage.css?=v1" />
     </head>
@@ -20,10 +20,10 @@
 
         <div class="flex-container">
             <div class="flex-container-form">
-                <p>Create Role</p>
+                <p>Rolle erstellen</p>
                 <form method="post" action="./Controller/PostRole.php">
-                    <input type="text" class="inputText" name="Role" placeholder="Role" />
-                    <input type="submit" class="inputSubmit" value="Submit" />
+                    <input type="text" class="inputText" name="Role" placeholder="Rolle" />
+                    <input type="submit" class="inputSubmit" value="speichern" />
                 </form>
             </div>
         </div>

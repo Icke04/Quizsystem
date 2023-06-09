@@ -13,7 +13,7 @@
     else
     {
         ?>
-        <p>Module konnte nicht gelöscht werden!</p>
+            <p>Modul konnte nicht gelöscht werden!</p>
         <?php
     }
 

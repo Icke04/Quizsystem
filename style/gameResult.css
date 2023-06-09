@@ -1,53 +1,119 @@
-.flex-container{
+.flex-container {
     align-items: center !important;
     align-content: start !important;
     flex-direction: column;
 }
 
-#resultDiv{
-    width: 80%;
+#resultDiv {
+    width: 100%;
+    margin-bottom: 15px;
 }
 
-#resultTable{
+#resultTable {
     width: 100%;
+    overflow: hidden;
     text-align: center;
 }
 
-#result{
+#result {
     width: 100%;
     text-align: center;
     font-weight: bold;
 }
 
-.green{
+.green {
     background-color: green !important;
     color: white;
 }
 
-.red{
+.red {
     background-color: red !important;
     color: white;
 }
 
-thead{
+thead {
     background-color: #44546a;
     color: white;
     font-weight: bold;
 }
 
-tbody{
+tbody {
     background-color:  #637b9c;
     color: white;
 }
 
-.noBackground{
+.noBackground {
     background-color: white !important;
 }
 
-#ownPoints{
+#ownPoints {
     font-weight: bold;
 }
 
-#opponentsPoints{
+#opponentsPoints {
     font-weight: bold;
+}
+
+.btn {
+    width: fit-content;
+    min-width: 200px;
+    margin: 0 auto;
+    background-color: #44546a;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    height: 8vh;
+}
+
+@media only screen and (max-width: 767px) {
+    #resultTable, #resultTable thead, #resultTable tbody, #resultTable th, #resultTable td {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    tr {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    td {
+        hyphens: auto;
+    }
+
+    tbody {
+        padding: 10px;
+    }
+
+    #resultTable {
+        text-align: right;
+    }
+
+    #resultTable thead {
+        position: absolute;
+        top: -1111px;
+        left: -1111px;
+    }
+
+    #resultTable td:not(.noBackground)::before {
+        float: left;
+        padding: 0 10px 0 0;
+        content: attr(data-label) ":";
+    }
+
+    #resultTable td:nth-child(1) {
+        font-weight: bold;
+    }
+
+    #resultTable td:nth-child(1) {
+        font-weight: bold;
+    }
+
+    #resultTable td:last-child {
+        border-bottom: 5px #d4e7ee solid;
+    }
+
+    #resultTable td.noBackground {
+        display: none;
+    }
 }

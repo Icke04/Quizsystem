@@ -28,12 +28,12 @@
                 ?>
                     <thead>
                         <tr>
-                            <td>Question</td>
-                            <td>CorrectAnswer</td>
-                            <td>WrongAnswer1</td>
-                            <td>WrongAnswer2</td>
-                            <td>WrongAnswer3</td>
-                            <td>Richtig?</td>
+                            <th>Frage</th>
+                            <th>Richtige Antwort</th>
+                            <th>Falsche Antwort 1</th>
+                            <th>Falsche Antwort 2</th>
+                            <th>Falsche Antwort 3</th>
+                            <th>Richtig?</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,13 +44,13 @@
                 ?>
                     <thead>
                         <tr>
-                            <td>Question</td>
-                            <td>CorrectAnswer</td>
-                            <td>WrongAnswer1</td>
-                            <td>WrongAnswer2</td>
-                            <td>WrongAnswer3</td>
-                            <td>Richtig?</td>
-                            <td>Gegner Richtig?</td>
+                            <th>Frage</th>
+                            <th>Richtige Antwort</th>
+                            <th>Falsche Antwort 1</th>
+                            <th>Falsche Antwort 2</th>
+                            <th>Falsche Antwort 3</th>
+                            <th>Richtig?</th>
+                            <th>Gegner Richtig?</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -74,24 +74,24 @@
                     {
                         ?>
                         <tr>
-                            <td><?php echo $question->getQuestion(); ?></td>
-                            <td><?php echo $question->getCorrectAnswer(); ?></td>
-                            <td><?php echo $question->getWrongAnswer1(); ?></td>
-                            <td><?php echo $question->getWrongAnswer2(); ?></td>
-                            <td><?php echo $question->getWrongAnswer3(); ?></td>
+                            <td data-label="Frage"><?php echo $question->getQuestion(); ?></td>
+                            <td data-label="Richtige Antwort"><?php echo $question->getCorrectAnswer(); ?></td>
+                            <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer1(); ?></td>
+                            <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer2(); ?></td>
+                            <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer3(); ?></td>
                             <?php
                             // Frage korrekt beantwortet?
                             if($gamePoint->getIsCorrect() == true || $gamePoint->getIsCorrect() == 1)
                             {
                                 $sumPoints++;
                                 ?>
-                                <td class="green">Richtig</td>
+                                <td class="green" data-label="Richtig?">Richtig</td>
                                 <?php
                             }
                             else
                             {
                                 ?>
-                                <td class="red">Falsch</td>
+                                <td class="red" data-label="Richtig?">Falsch</td>
                                 <?php
                             }
 
@@ -121,13 +121,13 @@
                                                 {
                                                     $sumOpponentsPoints++;
                                                     ?>
-                                                    <td class="green">Richtig</td>
+                                                    <td class="green" data-label="Gegner Richtig?">Richtig</td>
                                                     <?php
                                                 }
                                                 else
                                                 {
                                                     ?>
-                                                    <td class="red">Falsch</td>
+                                                    <td class="red" data-label="Gegner Richtig?">Falsch</td>
                                                     <?php
                                                 }
                                             }
@@ -173,12 +173,12 @@
                             <td class="noBackground"></td>
                             <td class="noBackground"></td>
                             <td class="noBackground"></td>
-                            <td id='ownPoints'><?php echo $sumPoints; ?></td>
+                            <td id='ownPoints' data-label="Eigenes Ergebnis"><?php echo $sumPoints; ?></td>
                             <?php
                             if(!$_SESSION['IsSingleplayer'])
                             {
                                 ?>
-                                <td id='opponentsPoints'></td>
+                                <td id='opponentsPoints' data-label="Gegnerisches Ergebnis"></td>
                                 <?php
                             }
                             ?>
@@ -191,14 +191,14 @@
         else
         {
             ?>
-            <p>Fehler beim Laden der Spielfragen!</p>
+                <p>Fehler beim Laden der Spielfragen!</p>
             <?php
         }
     }
     else
     {
         ?>
-        <p>Fehler beim Laden der Punkte!</p>
+            <p>Fehler beim Laden der Punkte!</p>
         <?php
     }
 

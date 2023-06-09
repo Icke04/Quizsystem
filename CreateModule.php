@@ -9,7 +9,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Module - Onlinequiz</title>
+        <title>Modul - Onlinequiz</title>
         <link rel="stylesheet" href="/style/layout.css" />
         <link rel="stylesheet" href="/style/anlage.css?=v1" />
     </head>
@@ -20,11 +20,11 @@
 
         <div class="flex-container">
             <div class="flex-container-form">
-                <p>Create Module</p>
+                <p>Modul erstellen</p>
                 <form method="post" action="./Controller/PostModule.php">
-                    <input type="text" class="inputText" name="Abbreviation" placeholder="Abbreviation" />
-                    <input type="text" class="inputText" name="FullDesignation" placeholder="FullDesignation" />
-                    <input type="submit" class="inputSubmit" value="Submit" />
+                    <input type="text" class="inputText" name="Abbreviation" placeholder="Abkürzung" />
+                    <input type="text" class="inputText" name="FullDesignation" placeholder="Vollständige Bezeichnung" />
+                    <input type="submit" class="inputSubmit" value="speichern" />
                 </form>
             </div>
         </div>

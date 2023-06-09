@@ -1,35 +1,92 @@
-table{
-    width: 80%;
+table {
+    width: 100%;
     color: white;
     text-align: center;
 }
 
-thead{
+thead {
     background-color: #44546A;
     font-weight: bold;
 }
 
-tbody{
+tbody {
     background-color: #637b9c;
+    padding: 10px;
+    width: 100%;
 }
 
-.btn{
+td {
+    padding: 5px;
+}
+
+.btn {
     width: 30px;
 }
 
-.submitEdit, .submitDelete{
+.submitEdit, .submitDelete {
     background-color: transparent;
     border: none;
 }
 
-.submitEdit{
+.submitEdit {
     color: white;
 }
 
-.submitDelete{
+.submitDelete {
     color: red;
 }
 
-.submitEdit:hover, .submitDelete:hover{
+.submitEdit:hover, .submitDelete:hover {
     cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+    table, table thead, table tbody, table th, table td {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    table {
+        width: 100%;
+        overflow: hidden;
+        text-align: right;
+    }
+
+    table thead {
+        position: absolute;
+        top: -1111px;
+        left: -1111px;
+    }
+
+    tbody {
+        padding: 10px;
+    }
+
+    tr {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    td {
+        hyphens: auto;
+    }
+
+    table td::before {
+        float: left;
+        padding: 0 10px 0 0;
+        content: attr(data-label) ":";
+    }
+
+    table td:nth-child(1) {
+        font-weight: bold;
+    }
+
+    table td:nth-child(1) {
+        font-weight: bold;
+    }
+
+    table td:last-child {
+        border-bottom: 5px #d4e7ee solid;
+    }
 }

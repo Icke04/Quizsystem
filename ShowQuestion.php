@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Question - Onlinequiz</title>
+        <title>Frage - Onlinequiz</title>
         <link rel="stylesheet" href="/style/layout.css" />
         <link rel="stylesheet" href="/style/table.css" />
     </head>
@@ -17,15 +17,15 @@
             <table>
                 <thead>
                     <tr>
-                        <td>Question</td>
-                        <td>CorrectAnswer</td>
-                        <td>WrongAnswer1</td>
-                        <td>WrongAnswer2</td>
-                        <td>WrongAnswer3</td>
-                        <td>IsApproved</td>
-                        <td>Full Designation</td>
-                        <td class="btn"></td>
-                        <td class="btn"></td>
+                        <td>Frage</td>
+                        <td>Richtige Antwort</td>
+                        <td>Falsche Antwort</td>
+                        <td>Falsche Antwort</td>
+                        <td>Falsche Antwort</td>
+                        <td>freigegeben</td>
+                        <td>Modul</td>
+                        <td class="btn">bearbeiten</td>
+                        <td class="btn">löschen</td>
                     </tr>
                 </thead>
                 <tbody>

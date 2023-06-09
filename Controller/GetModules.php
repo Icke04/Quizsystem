@@ -19,9 +19,9 @@
 
             ?>
             <tr>
-                <td><?php echo $module->getAbbreviation(); ?></td>
-                <td><?php echo $module->getFullDesignation(); ?></td>
-                <td>
+                <td data-label="Abkürzung"><?php echo $module->getAbbreviation(); ?></td>
+                <td data-label="Bezeichnung"><?php echo $module->getFullDesignation(); ?></td>
+                <td data-label="Tutoren">
                     <ul>
                         <?php
                             // Tutoren werden iteriert
@@ -53,7 +53,7 @@
                         ?>
                     </ul>
                 </td>
-                <td>
+                <td data-label="bearbeiten">
                     <form method="post" action="../EditModule.php">
                         <input type="hidden" name="IdModule" value="<?php echo $module->getIdModule(); ?>" />
                         <input type="hidden" name="Abbreviation" value="<?php echo $module->getAbbreviation(); ?>" />
@@ -61,7 +61,7 @@
                         <input class="submitEdit" type="submit" value="&#9881;" />
                     </form>
                 </td>
-                <td>
+                <td data-label="löschen">
                     <form method="post" action="../Controller/DeleteModule.php">
                         <input type="hidden" name="IdModule" value="<?php echo $module->getIdModule(); ?>" />
                         <input type="hidden" name="Abbreviation" value="<?php echo $module->getAbbreviation(); ?>" />
@@ -76,8 +76,7 @@
     else
     {
         ?>
-        <p>Fehler beim Laden der Modules!</p>
+            <p>Fehler beim Laden der Modules!</p>
         <?php
     }
-           
 ?>

@@ -7,7 +7,7 @@
             <div class="footer-item"><a class="footer-link">-</a></div>
             <div class="footer-item"><a class="footer-link">OnlineQuiz</a></div>
             <div class="footer-item"><a class="footer-link">-</a></div>
-            <div class="footer-item"><a class="footer-link">Privacy</a></div>
+            <div class="footer-item"><a class="footer-link">Datenschutz</a></div>
         </div>
     </div>
 

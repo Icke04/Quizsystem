@@ -9,7 +9,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Role - Onlinequiz</title>
+        <title>Rolle - Onlinequiz</title>
         <link rel="stylesheet" href="/style/layout.css" />
         <link rel="stylesheet" href="/style/anlage.css?=v1" />
     </head>

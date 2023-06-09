@@ -22,9 +22,9 @@
             <table>
                 <thead>
                     <tr>
-                        <td>Role</td>
-                        <td class="btn"></td>
-                        <td class="btn"></td>
+                        <td>Rolle</td>
+                        <td class="btn">bearbeiten</td>
+                        <td class="btn">löschen</td>
                     </tr>
                 </thead>
                 <tbody>
