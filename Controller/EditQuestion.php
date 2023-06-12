@@ -14,7 +14,7 @@
 
         ?>
             <div class="flex-container-form">
-                <p>Edit Question</p>
+                <p>Frage bearbeiten</p>
                 <form method="post" action="../Controller/UpdateQuestion.php">
                     <input type="hidden" class="inputText" name="IdQuestion" value="<?php echo $question->getIdQuestion(); ?>" />
                     <input type="hidden" class="inputText" name="IdUser" value="<?php echo $question->getIdUser(); ?>" />
@@ -24,27 +24,26 @@
                     <input type="text" class="inputText" name="WrongAnswer2" value="<?php echo $question->getWrongAnswer2(); ?>"  />
                     <input type="text" class="inputText" name="WrongAnswer3" value="<?php echo $question->getWrongAnswer3(); ?>"  />
                     <?php
-			// User ist Admin oder Tutor
-			if($_SESSION['Role'] == "Admin" || $_SESSION['Role'] == "Tutor")
-			{
-				?>
-					<label for="isApproved">Approved</label>
-				<?php
-
-				// Question wurde angenommen?
-	                        if($question->getIsApproved())
-        	                {
-                	            ?>
-                        	        <input id="isApproved" type="checkbox" class="inputText" name="IsApproved" checked />
-	                            <?php
-	                        }
-	                        else
-	                        {
-	                            ?>
-	                                <input id="isApproved"  type="checkbox" class="inputText" name="IsApproved" />
-	                            <?php
-	                        }
-			}
+                    // User ist Admin oder Tutor
+                    if($_SESSION['Role'] == "Admin" || $_SESSION['Role'] == "Tutor")
+                    {
+                    ?>
+                        <div class="input-list">
+                        <?php
+                        // Question wurde angenommen?
+                        if($question->getIsApproved()) {
+                        ?>
+                            <input id="isApproved" type="checkbox" name="IsApproved" checked />
+                        <?php
+                        } else {
+                        ?>
+                            <input id="isApproved"  type="checkbox" name="IsApproved" />
+                        <?php
+                        }?>
+                        <label for="isApproved">freigegeben</label>
+                    </div>
+                    <?php
+                    }
                     ?>
 
                     <select class="select" name="IdModule">
@@ -69,10 +68,10 @@
                         ?>
                     </select>
                     
-                    <input type="submit" class="inputSubmit" value="Submit" />
+                    <input type="submit" class="inputSubmit" value="speichern" />
                 </form>
                 <form method="post" action="../ShowQuestion.php">
-                    <input type="submit" class="inputSubmit" value="Cancel" />
+                    <input type="submit" class="inputSubmit" value="zurück" />
                 </form>
             </div>
         <?php

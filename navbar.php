@@ -52,7 +52,7 @@
             <?php 
                 if($_SESSION['Role'] == "Admin"){
                     $outputModule = "<div class='nav-item dropdown'>" .
-                                    "<a class='nav-link dropbtn'>Rolle</a>" .
+                                    "<a class='nav-link dropbtn'>Rollen</a>" .
                                     "<div class='dropdown dropdown-content'>" .
                                         "<form method='post' action='CreateRole.php'><input type='submit' class='nav-link drop' value='erstellen' /></form>" .
                                         "<form method='post' action='ShowRole.php'><input type='submit' class='nav-link drop' value='bearbeiten' /></form>" .

@@ -25,8 +25,8 @@
                         <td>Abbreviation</td>
                         <td>FullDesignation</td>
                         <td>Tutoren</td>
-                        <td class="btn"></td>
-                        <td class="btn"></td>
+                        <td class="btn">bearbeiten</td>
+                        <td class="btn">löschen</td>
                     </tr>
                 </thead>
                 <tbody>

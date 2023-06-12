@@ -40,15 +40,15 @@
                         {
                             ?>
                                 <tr>
-                                    <td><?php echo $question->getQuestion(); ?></td>
-                                    <td><?php echo $question->getCorrectAnswer(); ?></td>
-                                    <td><?php echo $question->getWrongAnswer1(); ?></td>
-                                    <td><?php echo $question->getWrongAnswer2(); ?></td>
-                                    <td><?php echo $question->getWrongAnswer3(); ?></td>
-                                    <td><?php echo $question->getIsApproved(); ?></td>
-                                    <td><?php echo $module->getFullDesignation(); ?></td>
-                                    <td></td>
-                                    <td></td>
+                                <td data-label="Frage"><?php echo $question->getQuestion(); ?></td>
+                                    <td data-label="Richtige Antwort"><?php echo $question->getCorrectAnswer(); ?></td>
+                                    <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer1(); ?></td>
+                                    <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer2(); ?></td>
+                                    <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer3(); ?></td>
+                                    <td data-label="freigegeben"><?php echo $question->getIsApproved(); ?></td>
+                                    <td data-label="Modul"><?php echo $module->getFullDesignation(); ?></td>
+                                    <td data-label="bearbeiten"></td>
+                                    <td data-label="löschen"></td>
                                 </tr>
                             <?php
                         }
@@ -56,14 +56,14 @@
                         {
                             ?>
                                 <tr>
-                                    <td><?php echo $question->getQuestion(); ?></td>
-                                    <td><?php echo $question->getCorrectAnswer(); ?></td>
-                                    <td><?php echo $question->getWrongAnswer1(); ?></td>
-                                    <td><?php echo $question->getWrongAnswer2(); ?></td>
-                                    <td><?php echo $question->getWrongAnswer3(); ?></td>
-                                    <td><?php echo $question->getIsApproved(); ?></td>
-                                    <td><?php echo $module->getFullDesignation(); ?></td>
-                                    <td>
+                                    <td data-label="Frage"><?php echo $question->getQuestion(); ?></td>
+                                    <td data-label="Richtige Antwort"><?php echo $question->getCorrectAnswer(); ?></td>
+                                    <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer1(); ?></td>
+                                    <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer2(); ?></td>
+                                    <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer3(); ?></td>
+                                    <td data-label="freigegeben"><?php echo $question->getIsApproved(); ?></td>
+                                    <td data-label="Modul"><?php echo $module->getFullDesignation(); ?></td>
+                                    <td data-label="bearbeiten">
                                         <form method="post" action="../EditQuestion.php">
                                             <input type="hidden" name="IdQuestion" value="<?php echo $question->getIdQuestion(); ?>" />
                                             <input type="hidden" name="Question" value="<?php echo $question->getQuestion(); ?>" />
@@ -76,7 +76,7 @@
                                             <input class="submitEdit" type="submit" value="&#9881;" />
                                         </form>
                                     </td>
-                                    <td>
+                                    <td data-label="löschen">
                                         <?php
                                         if($gameQuestions[0]->getDataAvailable())
                                         {
@@ -120,14 +120,14 @@
                             if($isTutor->getIdModule() == $question->getIdModule() && $question->getIsApproved() == 0){
                                 ?>
                                     <tr>
-                                        <td><?php echo $question->getQuestion(); ?></td>
-                                        <td><?php echo $question->getCorrectAnswer(); ?></td>
-                                        <td><?php echo $question->getWrongAnswer1(); ?></td>
-                                        <td><?php echo $question->getWrongAnswer2(); ?></td>
-                                        <td><?php echo $question->getWrongAnswer3(); ?></td>
-                                        <td><?php echo $question->getIsApproved(); ?></td>
-                                        <td><?php echo $module->getFullDesignation(); ?></td>
-                                        <td>
+                                        <td data-label="Frage"><?php echo $question->getQuestion(); ?></td>
+                                        <td data-label="Richtige Antwort"><?php echo $question->getCorrectAnswer(); ?></td>
+                                        <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer1(); ?></td>
+                                        <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer2(); ?></td>
+                                        <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer3(); ?></td>
+                                        <td data-label="freigegeben"><?php echo $question->getIsApproved(); ?></td>
+                                        <td data-label="Modul"><?php echo $module->getFullDesignation(); ?></td>
+                                        <td data-label="bearbeiten">
                                             <form method="post" action="../Controller/UpdateQuestion.php">
                                                 <input type="hidden" name="IdQuestion" value="<?php echo $question->getIdQuestion(); ?>" />
                                                 <input type="hidden" name="Question" value="<?php echo $question->getQuestion(); ?>" />
@@ -138,7 +138,7 @@
                                                 <input type="hidden" name="IsApproved" value="1" />
                                                 <input type="hidden" name="IdModule" value="<?php echo $question->getIdModule(); ?>" />
                                                 <input type="hidden" name="IdUser" value="<?php echo $question->getIdUser(); ?>" />
-                                                <input type="submit" value="Approve" />
+                                                <input type="submit" value="freigeben" />
                                             </form>
                                         </td>
                                         <td>
@@ -162,7 +162,7 @@
                                                 <input type="hidden" name="IsApproved" value="<?php echo $question->getIsApproved(); ?>" />
                                                 <input type="hidden" name="IdModule" value="<?php echo $question->getIdModule(); ?>" />
                                                 <input type="hidden" name="IdUser" value="<?php echo $question->getIdUser(); ?>" />
-                                                <input type="submit" value="Decline" />
+                                                <input type="submit" value="ablehnen" />
                                             </form>
                                             <?php
                                         }
@@ -175,14 +175,14 @@
                             {
                                 ?>
                                     <tr>
-                                        <td><?php echo $question->getQuestion(); ?></td>
-                                        <td><?php echo $question->getCorrectAnswer(); ?></td>
-                                        <td><?php echo $question->getWrongAnswer1(); ?></td>
-                                        <td><?php echo $question->getWrongAnswer2(); ?></td>
-                                        <td><?php echo $question->getWrongAnswer3(); ?></td>
-                                        <td><?php echo $question->getIsApproved(); ?></td>
-                                        <td><?php echo $module->getFullDesignation(); ?></td>
-                                        <td>
+                                        <td data-label="Frage"><?php echo $question->getQuestion(); ?></td>
+                                        <td data-label="Richtige Antwort"><?php echo $question->getCorrectAnswer(); ?></td>
+                                        <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer1(); ?></td>
+                                        <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer2(); ?></td>
+                                        <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer3(); ?></td>
+                                        <td data-label="freigegeben"><?php echo $question->getIsApproved(); ?></td>
+                                        <td data-label="Modul"><?php echo $module->getFullDesignation(); ?></td>
+                                        <td data-label="bearbeiten">
                                             <form method="post" action="../EditQuestion.php">
                                                 <input type="hidden" name="IdQuestion" value="<?php echo $question->getIdQuestion(); ?>" />
                                                 <input type="hidden" name="Question" value="<?php echo $question->getQuestion(); ?>" />
