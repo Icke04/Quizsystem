@@ -24,7 +24,7 @@
             // Lädt Module, welches zur Frage gehört
             $module = $question->getModule();
 
-            $gameQuestions = getUsedGameQuestion($question->getIdQuestion());
+            $gameQuestions = getUsedGameQuestions($question->getIdQuestion());
 
             // Kein Error und Daten vorhanden?
             if(!($module->getIsError()) && $module->getDataAvailable())
@@ -78,7 +78,7 @@
                                     </td>
                                     <td>
                                         <?php
-                                        if($gameQuestions[0]->getIsDataAvailable())
+                                        if($gameQuestions[0]->getDataAvailable())
                                         {
                                             ?>
                                             <p></p>
@@ -143,7 +143,7 @@
                                         </td>
                                         <td>
                                         <?php
-                                        if($gameQuestions[0]->getIsDataAvailable())
+                                        if($gameQuestions[0]->getDataAvailable())
                                         {
                                             ?>
                                             <p></p>
@@ -197,7 +197,7 @@
                                         </td>
                                         <td>
                                             <?php
-                                            if($gameQuestions[0]->getIsDataAvailable())
+                                            if($gameQuestions[0]->getDataAvailable())
                                             {
                                                 ?>
                                                 <p></p>
@@ -254,7 +254,7 @@
                             </td>
                             <td>
                                 <?php
-                                if($gameQuestions[0]->getIsDataAvailable())
+                                if($gameQuestions[0]->getDataAvailable())
                                 {
                                     ?>
                                     <p></p>
