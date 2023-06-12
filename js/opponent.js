@@ -15,7 +15,7 @@ if(isSingleplayer == false || isSingleplayer == 0)
             {
                 $("#start").show();
                 $("#delete").hide();
-                $("#opponent").text($result[0] + " joined the Game!");
+                $("#opponent").text($result[0] + " ist dem Spiel beigetreten!");
             }
         }
     });
