@@ -23,7 +23,9 @@
         {
             // Lädt Module, welches zur Frage gehört
             $module = $question->getModule();
-            
+
+            $gameQuestions = getUsedGameQuestion($question->getIdQuestion());
+
             // Kein Error und Daten vorhanden?
             if(!($module->getIsError()) && $module->getDataAvailable())
             {
@@ -38,15 +40,15 @@
                         {
                             ?>
                                 <tr>
-                                    <td data-label="Frage"><?php echo $question->getQuestion(); ?></td>
-                                    <td data-label="Richtige Antwort"><?php echo $question->getCorrectAnswer(); ?></td>
-                                    <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer1(); ?></td>
-                                    <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer2(); ?></td>
-                                    <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer3(); ?></td>
-                                    <td data-label="freigegeben"><?php echo $question->getIsApproved(); ?></td>
-                                    <td data-label="Modul"><?php echo $module->getFullDesignation(); ?></td>
-                                    <td data-label="bearbeiten"></td>
-                                    <td data-label="löschen"></td>
+                                    <td><?php echo $question->getQuestion(); ?></td>
+                                    <td><?php echo $question->getCorrectAnswer(); ?></td>
+                                    <td><?php echo $question->getWrongAnswer1(); ?></td>
+                                    <td><?php echo $question->getWrongAnswer2(); ?></td>
+                                    <td><?php echo $question->getWrongAnswer3(); ?></td>
+                                    <td><?php echo $question->getIsApproved(); ?></td>
+                                    <td><?php echo $module->getFullDesignation(); ?></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                             <?php
                         }
@@ -54,14 +56,14 @@
                         {
                             ?>
                                 <tr>
-                                    <td data-label="Frage"><?php echo $question->getQuestion(); ?></td>
-                                    <td data-label="Richtige Antwort"><?php echo $question->getCorrectAnswer(); ?></td>
-                                    <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer1(); ?></td>
-                                    <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer2(); ?></td>
-                                    <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer3(); ?></td>
-                                    <td data-label="freigegeben"><?php echo $question->getIsApproved(); ?></td>
-                                    <td data-label="Modul"><?php echo $module->getFullDesignation(); ?></td>
-                                    <td data-label="bearbeiten">
+                                    <td><?php echo $question->getQuestion(); ?></td>
+                                    <td><?php echo $question->getCorrectAnswer(); ?></td>
+                                    <td><?php echo $question->getWrongAnswer1(); ?></td>
+                                    <td><?php echo $question->getWrongAnswer2(); ?></td>
+                                    <td><?php echo $question->getWrongAnswer3(); ?></td>
+                                    <td><?php echo $question->getIsApproved(); ?></td>
+                                    <td><?php echo $module->getFullDesignation(); ?></td>
+                                    <td>
                                         <form method="post" action="../EditQuestion.php">
                                             <input type="hidden" name="IdQuestion" value="<?php echo $question->getIdQuestion(); ?>" />
                                             <input type="hidden" name="Question" value="<?php echo $question->getQuestion(); ?>" />
@@ -74,18 +76,31 @@
                                             <input class="submitEdit" type="submit" value="&#9881;" />
                                         </form>
                                     </td>
-                                    <td data-label="löschen">
-                                        <form method="post" action="../Controller/DeleteQuestion.php">
-                                            <input type="hidden" name="IdQuestion" value="<?php echo $question->getIdQuestion(); ?>" />
-                                            <input type="hidden" name="Question" value="<?php echo $question->getQuestion(); ?>" />
-                                            <input type="hidden" name="CorrectAnswer" value="<?php echo $question->getCorrectAnswer(); ?>" />
-                                            <input type="hidden" name="WrongAnswer1" value="<?php echo $question->getWrongAnswer1(); ?>" />
-                                            <input type="hidden" name="WrongAnswer2" value="<?php echo $question->getWrongAnswer2(); ?>" />
-                                            <input type="hidden" name="WrongAnswer3" value="<?php echo $question->getWrongAnswer3(); ?>" />
-                                            <input type="hidden" name="IsApproved" value="<?php echo $question->getIsApproved(); ?>" />
-                                            <input type="hidden" name="IdModule" value="<?php echo $question->getIdModule(); ?>" />
-                                            <input class="submitDelete" type="submit" value="&#10006;" />
-                                        </form>
+                                    <td>
+                                        <?php
+                                        if($gameQuestions[0]->getIsDataAvailable())
+                                        {
+                                            ?>
+                                            <p></p>
+                                            <?php
+                                        }
+                                        else
+                                        {
+                                            ?>
+                                            <form method="post" action="../Controller/DeleteQuestion.php">
+                                                <input type="hidden" name="IdQuestion" value="<?php echo $question->getIdQuestion(); ?>" />
+                                                <input type="hidden" name="Question" value="<?php echo $question->getQuestion(); ?>" />
+                                                <input type="hidden" name="CorrectAnswer" value="<?php echo $question->getCorrectAnswer(); ?>" />
+                                                <input type="hidden" name="WrongAnswer1" value="<?php echo $question->getWrongAnswer1(); ?>" />
+                                                <input type="hidden" name="WrongAnswer2" value="<?php echo $question->getWrongAnswer2(); ?>" />
+                                                <input type="hidden" name="WrongAnswer3" value="<?php echo $question->getWrongAnswer3(); ?>" />
+                                                <input type="hidden" name="IsApproved" value="<?php echo $question->getIsApproved(); ?>" />
+                                                <input type="hidden" name="IdModule" value="<?php echo $question->getIdModule(); ?>" />
+                                                <input class="submitDelete" type="submit" value="&#10006;" />
+                                            </form>
+                                            <?php
+                                        }
+                                        ?>
                                     </td>
                                 </tr>
                             <?php
@@ -105,14 +120,14 @@
                             if($isTutor->getIdModule() == $question->getIdModule() && $question->getIsApproved() == 0){
                                 ?>
                                     <tr>
-                                        <td data-label="Frage"><?php echo $question->getQuestion(); ?></td>
-                                        <td data-label="Richtige Antwort"><?php echo $question->getCorrectAnswer(); ?></td>
-                                        <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer1(); ?></td>
-                                        <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer2(); ?></td>
-                                        <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer3(); ?></td>
-                                        <td data-label="freigegeben"><?php echo $question->getIsApproved(); ?></td>
-                                        <td data-label="Modul"><?php echo $module->getFullDesignation(); ?></td>
-                                        <td data-label="bearbeiten">
+                                        <td><?php echo $question->getQuestion(); ?></td>
+                                        <td><?php echo $question->getCorrectAnswer(); ?></td>
+                                        <td><?php echo $question->getWrongAnswer1(); ?></td>
+                                        <td><?php echo $question->getWrongAnswer2(); ?></td>
+                                        <td><?php echo $question->getWrongAnswer3(); ?></td>
+                                        <td><?php echo $question->getIsApproved(); ?></td>
+                                        <td><?php echo $module->getFullDesignation(); ?></td>
+                                        <td>
                                             <form method="post" action="../Controller/UpdateQuestion.php">
                                                 <input type="hidden" name="IdQuestion" value="<?php echo $question->getIdQuestion(); ?>" />
                                                 <input type="hidden" name="Question" value="<?php echo $question->getQuestion(); ?>" />
@@ -126,7 +141,17 @@
                                                 <input type="submit" value="Approve" />
                                             </form>
                                         </td>
-                                        <td data-label="löschen">
+                                        <td>
+                                        <?php
+                                        if($gameQuestions[0]->getIsDataAvailable())
+                                        {
+                                            ?>
+                                            <p></p>
+                                            <?php
+                                        }
+                                        else
+                                        {
+                                            ?>
                                             <form method="post" action="../Controller/DeleteQuestion.php">
                                                 <input type="hidden" name="IdQuestion" value="<?php echo $question->getIdQuestion(); ?>" />
                                                 <input type="hidden" name="Question" value="<?php echo $question->getQuestion(); ?>" />
@@ -139,6 +164,9 @@
                                                 <input type="hidden" name="IdUser" value="<?php echo $question->getIdUser(); ?>" />
                                                 <input type="submit" value="Decline" />
                                             </form>
+                                            <?php
+                                        }
+                                        ?>
                                         </td>
                                     </tr>
                                 <?php
@@ -147,14 +175,14 @@
                             {
                                 ?>
                                     <tr>
-                                        <td data-label="Frage"><?php echo $question->getQuestion(); ?></td>
-                                        <td data-label="Richtige Antwort"><?php echo $question->getCorrectAnswer(); ?></td>
-                                        <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer1(); ?></td>
-                                        <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer2(); ?></td>
-                                        <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer3(); ?></td>
-                                        <td data-label="freigegeben"><?php echo $question->getIsApproved(); ?></td>
-                                        <td data-label="Modul"><?php echo $module->getFullDesignation(); ?></td>
-                                        <td data-label="bearbeiten">
+                                        <td><?php echo $question->getQuestion(); ?></td>
+                                        <td><?php echo $question->getCorrectAnswer(); ?></td>
+                                        <td><?php echo $question->getWrongAnswer1(); ?></td>
+                                        <td><?php echo $question->getWrongAnswer2(); ?></td>
+                                        <td><?php echo $question->getWrongAnswer3(); ?></td>
+                                        <td><?php echo $question->getIsApproved(); ?></td>
+                                        <td><?php echo $module->getFullDesignation(); ?></td>
+                                        <td>
                                             <form method="post" action="../EditQuestion.php">
                                                 <input type="hidden" name="IdQuestion" value="<?php echo $question->getIdQuestion(); ?>" />
                                                 <input type="hidden" name="Question" value="<?php echo $question->getQuestion(); ?>" />
@@ -167,18 +195,31 @@
                                                 <input class="submitEdit" type="submit" value="&#9881;" />
                                             </form>
                                         </td>
-                                        <td data-label="löschen">
-                                            <form method="post" action="../Controller/DeleteQuestion.php">
-                                                <input type="hidden" name="IdQuestion" value="<?php echo $question->getIdQuestion(); ?>" />
-                                                <input type="hidden" name="Question" value="<?php echo $question->getQuestion(); ?>" />
-                                                <input type="hidden" name="CorrectAnswer" value="<?php echo $question->getCorrectAnswer(); ?>" />
-                                                <input type="hidden" name="WrongAnswer1" value="<?php echo $question->getWrongAnswer1(); ?>" />
-                                                <input type="hidden" name="WrongAnswer2" value="<?php echo $question->getWrongAnswer2(); ?>" />
-                                                <input type="hidden" name="WrongAnswer3" value="<?php echo $question->getWrongAnswer3(); ?>" />
-                                                <input type="hidden" name="IsApproved" value="<?php echo $question->getIsApproved(); ?>" />
-                                                <input type="hidden" name="IdModule" value="<?php echo $question->getIdModule(); ?>" />
-                                                <input class="submitDelete" type="submit" value="&#10006;" />
-                                            </form>
+                                        <td>
+                                            <?php
+                                            if($gameQuestions[0]->getIsDataAvailable())
+                                            {
+                                                ?>
+                                                <p></p>
+                                                <?php
+                                            }
+                                            else
+                                            {
+                                                ?>
+                                                <form method="post" action="../Controller/DeleteQuestion.php">
+                                                    <input type="hidden" name="IdQuestion" value="<?php echo $question->getIdQuestion(); ?>" />
+                                                    <input type="hidden" name="Question" value="<?php echo $question->getQuestion(); ?>" />
+                                                    <input type="hidden" name="CorrectAnswer" value="<?php echo $question->getCorrectAnswer(); ?>" />
+                                                    <input type="hidden" name="WrongAnswer1" value="<?php echo $question->getWrongAnswer1(); ?>" />
+                                                    <input type="hidden" name="WrongAnswer2" value="<?php echo $question->getWrongAnswer2(); ?>" />
+                                                    <input type="hidden" name="WrongAnswer3" value="<?php echo $question->getWrongAnswer3(); ?>" />
+                                                    <input type="hidden" name="IsApproved" value="<?php echo $question->getIsApproved(); ?>" />
+                                                    <input type="hidden" name="IdModule" value="<?php echo $question->getIdModule(); ?>" />
+                                                    <input class="submitDelete" type="submit" value="&#10006;" />
+                                                </form>
+                                                <?php
+                                            }
+                                            ?>
                                         </td>
                                     </tr>
                                 <?php
@@ -191,14 +232,14 @@
                 {
                     ?>
                         <tr>
-                            <td data-label="Frage"><?php echo $question->getQuestion(); ?></td>
-                            <td data-label="Richtige Antwort"><?php echo $question->getCorrectAnswer(); ?></td>
-                            <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer1(); ?></td>
-                            <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer2(); ?></td>
-                            <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer3(); ?></td>
-                            <td data-label="freigegeben"><?php echo $question->getIsApproved(); ?></td>
-                            <td data-label="Modul"><?php echo $module->getFullDesignation(); ?></td>
-                            <td data-label="bearbeiten">
+                            <td><?php echo $question->getQuestion(); ?></td>
+                            <td><?php echo $question->getCorrectAnswer(); ?></td>
+                            <td><?php echo $question->getWrongAnswer1(); ?></td>
+                            <td><?php echo $question->getWrongAnswer2(); ?></td>
+                            <td><?php echo $question->getWrongAnswer3(); ?></td>
+                            <td><?php echo $question->getIsApproved(); ?></td>
+                            <td><?php echo $module->getFullDesignation(); ?></td>
+                            <td>
                                 <form method="post" action="../EditQuestion.php">
                                     <input type="hidden" name="IdQuestion" value="<?php echo $question->getIdQuestion(); ?>" />
                                     <input type="hidden" name="Question" value="<?php echo $question->getQuestion(); ?>" />
@@ -211,18 +252,31 @@
                                     <input class="submitEdit" type="submit" value="&#9881;" />
                                 </form>
                             </td>
-                            <td data-label="löschen">
-                                <form method="post" action="../Controller/DeleteQuestion.php">
-                                    <input type="hidden" name="IdQuestion" value="<?php echo $question->getIdQuestion(); ?>" />
-                                    <input type="hidden" name="Question" value="<?php echo $question->getQuestion(); ?>" />
-                                    <input type="hidden" name="CorrectAnswer" value="<?php echo $question->getCorrectAnswer(); ?>" />
-                                    <input type="hidden" name="WrongAnswer1" value="<?php echo $question->getWrongAnswer1(); ?>" />
-                                    <input type="hidden" name="WrongAnswer2" value="<?php echo $question->getWrongAnswer2(); ?>" />
-                                    <input type="hidden" name="WrongAnswer3" value="<?php echo $question->getWrongAnswer3(); ?>" />
-                                    <input type="hidden" name="IsApproved" value="<?php echo $question->getIsApproved(); ?>" />
-                                    <input type="hidden" name="IdModule" value="<?php echo $question->getIdModule(); ?>" />
-                                    <input class="submitDelete" type="submit" value="&#10006;" />
-                                </form>
+                            <td>
+                                <?php
+                                if($gameQuestions[0]->getIsDataAvailable())
+                                {
+                                    ?>
+                                    <p></p>
+                                    <?php
+                                }
+                                else
+                                {
+                                    ?>
+                                    <form method="post" action="../Controller/DeleteQuestion.php">
+                                        <input type="hidden" name="IdQuestion" value="<?php echo $question->getIdQuestion(); ?>" />
+                                        <input type="hidden" name="Question" value="<?php echo $question->getQuestion(); ?>" />
+                                        <input type="hidden" name="CorrectAnswer" value="<?php echo $question->getCorrectAnswer(); ?>" />
+                                        <input type="hidden" name="WrongAnswer1" value="<?php echo $question->getWrongAnswer1(); ?>" />
+                                        <input type="hidden" name="WrongAnswer2" value="<?php echo $question->getWrongAnswer2(); ?>" />
+                                        <input type="hidden" name="WrongAnswer3" value="<?php echo $question->getWrongAnswer3(); ?>" />
+                                        <input type="hidden" name="IsApproved" value="<?php echo $question->getIsApproved(); ?>" />
+                                        <input type="hidden" name="IdModule" value="<?php echo $question->getIdModule(); ?>" />
+                                        <input class="submitDelete" type="submit" value="&#10006;" />
+                                    </form>
+                                    <?php
+                                }
+                                ?>
                             </td>
                         </tr>
                     <?php
@@ -231,7 +285,7 @@
             else
             {
                 ?>
-                    <p>Fehler beim Laden des Modules!</p>
+                <p>Fehler beim Laden des Modules!</p>
                 <?php
             }
         }
@@ -239,7 +293,7 @@
     else
     {
         ?>
-            <p>Fehler beim Laden der Fragen!</p>
+        <p>Fehler beim Laden der Fragen!</p>
         <?php
     }
 

@@ -1198,6 +1198,33 @@
         return $gameQuestionArray;
     }
     /**
+     * Methode getGameQuestions.
+     * Gets all GameQuestions by GameRoom.
+     * 
+     * @param int $IdQuestion
+     * 
+     * @return array $GameQuestions
+     */
+    function getUsedGameQuestions(int $IdQuestion): array
+    {
+        global $mysqli;
+        $gameQuestionArray = array();
+        $sql = "SELECT * FROM gamequestions WHERE IdQuestion='$IdQuestion'";
+        $result = $mysqli->query($sql);
+        
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                $gameQuestion = new GameQuestion($row['IdGameQuestion'], $row['IdGameRoom'], $row['IdQuestion'], false, "", true);
+                $gameQuestionArray[] = $gameQuestion;
+            }
+        }else{
+            $gameQuestion = new GameQuestion(0, 0, 0, true, "Error!", false);
+            $gameQuestionArray[] = $gameQuestion;
+        }
+
+        return $gameQuestionArray;
+    }
+    /**
      * Methode postGameQuestion.
      * Posts a GameQuestion.
      * 
