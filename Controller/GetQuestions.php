@@ -40,7 +40,7 @@
                         {
                             ?>
                                 <tr>
-                                <td data-label="Frage"><?php echo $question->getQuestion(); ?></td>
+                                    <td data-label="Frage"><?php echo $question->getQuestion(); ?></td>
                                     <td data-label="Richtige Antwort"><?php echo $question->getCorrectAnswer(); ?></td>
                                     <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer1(); ?></td>
                                     <td data-label="Falsche Antwort"><?php echo $question->getWrongAnswer2(); ?></td>
@@ -81,7 +81,7 @@
                                         if($gameQuestions[0]->getDataAvailable())
                                         {
                                             ?>
-                                            <p></p>
+                                            <p><?php echo $_SESSION['Role']; ?></p>
                                             <?php
                                         }
                                         else
@@ -110,6 +110,7 @@
                 // Angemeldeter User ist Tutor?
                 else if($_SESSION['Role'] == "Tutor") 
                 {
+		    $questionArray = array();
                     // Iteriert durch die Module, wo angemeldeter User Tutor ist
                     foreach($isTutorArray as $isTutor)
                     {
@@ -117,8 +118,20 @@
                         if($isTutor->getIdModule() == $question->getIdModule() || $_SESSION['IdUser'] == $question->getIdUser())
                         {
                             // Ist angemeldeter User Tutor im Modul der Frage und Frage wurde noch nicht angenommen?
-                            if($isTutor->getIdModule() == $question->getIdModule() && $question->getIsApproved() == 0){
-                                ?>
+                            if($isTutor->getIdModule() == $question->getIdModule() && $question->getIsApproved() == 0 || $question->getIsApproved() == false){
+                                $questionAlreadyShown = false;
+				foreach($questionArray as $alreadyShownQuestion)
+				{
+				    if($question->getIdQuestion() == $alreadyShownQuestion)
+				    {
+ 					$questionAlreadyShown = true;
+				    }
+				}
+				
+				if($questionAlreadyShown == false)
+				{
+				?>
+				
                                     <tr>
                                         <td data-label="Frage"><?php echo $question->getQuestion(); ?></td>
                                         <td data-label="Richtige Antwort"><?php echo $question->getCorrectAnswer(); ?></td>
@@ -170,9 +183,22 @@
                                         </td>
                                     </tr>
                                 <?php
+				$questionArray[] = $question->getIdQuestion();	
+				}
                             }
                             else 
                             {
+				$questionAlreadyShown = false;
+				foreach($questionArray as $alreadyShownQuestion)
+				{
+				    if($question->getIdQuestion() == $alreadyShownQuestion)
+				    {
+ 					$questionAlreadyShown = true;
+				    }
+				}
+				
+				if($questionAlreadyShown == false)
+				{
                                 ?>
                                     <tr>
                                         <td data-label="Frage"><?php echo $question->getQuestion(); ?></td>
@@ -223,6 +249,8 @@
                                         </td>
                                     </tr>
                                 <?php
+				$questionArray[] = $question->getIdQuestion();
+				}
                             }
                         }
                     }
