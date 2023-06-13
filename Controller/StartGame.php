@@ -68,7 +68,7 @@
                 else
                 {
                     ?>
-                    <p>Fehler beim Laden der Fragen zum ausgewählten Module!</p>
+                    <p>Fehler beim Laden der Fragen zum ausgewählten Modul!</p>
                     <?php
                 }
             }
