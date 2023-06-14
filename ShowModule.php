@@ -22,8 +22,8 @@
             <table>
                 <thead>
                     <tr>
-                        <td>Abbreviation</td>
-                        <td>FullDesignation</td>
+                        <td>Abkürzung</td>
+                        <td>Bezeichnung</td>
                         <td>Tutoren</td>
                         <td class="btn">bearbeiten</td>
                         <td class="btn">löschen</td>
