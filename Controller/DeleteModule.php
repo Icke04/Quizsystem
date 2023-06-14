@@ -8,6 +8,7 @@
     {
         // Module löschen
         deleteModule($_POST['IdModule']);
+	
         header("LOCATION: ../ShowModule.php");
     }
     else

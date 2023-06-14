@@ -467,12 +467,12 @@
                 {
                     while($moduleRow = $resultModule->fetch_assoc())
                     {
-                        $module = new Module($moduleRow['IdModule'], $moduleRow['Abbreviation'], $moduleRow['FullDesignation'], false, "", true);
+                        $Module = new Module(intval($moduleRow['IdModule']), $moduleRow['Abbreviation'], $moduleRow['FullDesignation'], false, "", true);
                     }
                 }
 
-                $question = new Question($questionRow['IdQuestion'], $questionRow['Question'], $questionRow['CorrectAnswer'], $questionRow['WrongAnswer1'], $questionRow['WrongAnswer2'], $questionRow['WrongAnswer3'], $questionRow['IsApproved'], $questionRow['IdModule'], $questionRow['IdUser'], false, "", true);
-                $question->setModule($module);
+                $question = new Question($questionRow['IdQuestion'], $questionRow['Question'], $questionRow['CorrectAnswer'], $questionRow['WrongAnswer1'], $questionRow['WrongAnswer2'], $questionRow['WrongAnswer3'], $questionRow['IsApproved'], intval($questionRow['IdModule']), intval($questionRow['IdUser']), false, "", true);
+                $question->setModule($Module);
                 $questionsArray[] = $question;
             }
         }
